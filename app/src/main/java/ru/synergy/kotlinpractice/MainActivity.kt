@@ -142,10 +142,141 @@ class MainActivity : AppCompatActivity() {
 
         // Lesson 56
 
+        displayUser("Tom", 23)
+        displayUser("Alex", 5)
+        displayUser("Kate", 0)
+        displayUser("John")
+
+        displayUser(age = 20, name = "Andrew")
+
+        printStrings("Tom", "Bob", "Sam")
+        printStrings("Kotlin", "JavaStcript", "Java", "C#", "C++")
+
+     //  sum(7,4,3,2,6,78,9)
+
+        val nums = intArrayOf(1,2,3,4,5) //   * - spread operator
+        changeNumbers(2, *nums)
+
+        val a = sum(1,3, 10)
+
+//        var message: () -> Unit
+//        message =  ::hello
+//        message()  // Hello Kotlin
+//
+//        message = ::bye
+//        message() // Bye bye Kotlin
+
+        displayMessage { ::hello }() // Hello kotlin x2
+        displayMessage { ::bye }
+
+        val operation: (Int, Int) -> Int = ::sum
+        val result = operation(3,5)
+        println(result) // 8
+
+
+        // анонимные функции
+       val c = fun(x: Int, y: Int): Int{    // val c = fun(x: Int, y: Int): Int = x+y
+            return x+y
+        }
+
+
+        var sum = {x: Int, y: Int->
+            val result = x + y
+            print("$x + $y = $result")
+        }
+
+        sum = {x: Int, y: Int -> x+y}
+
+        doOperation(9,5, fun(x: Int, y: Int): Int = x+y)
+        doOperation(9,5) { x: Int, y: Int -> x - y }
+
+        val hello = {print("Hello")}
+        hello() // Hello
+
+        val printer = {message: String -> println(message)}
+        printer("Hello")
+
+
+
+
     }
 
-    fun displayName(name: String, age: Int){
+    fun doOperation(x: Int, y: Int, op: (Int, Int) -> Int){
+        val result = op(x,y)
+        println(result)
+    }
+
+    fun displayUser(name: String, age: Int = 18){
         println("Name: $name, Age: $age")
     }
 
-}
+//    fun double(n : IntArray){
+//        n[0] = n[0] * 2
+//    }
+
+    fun double (n : Int){
+        var a = n
+    }
+
+    fun printStrings(vararg args : String){
+        for(str in args){
+            println(str)
+        }
+    }
+
+//    fun sum(operand: String, vararg numbers : Int){
+//        var result = 0
+//        for(n in numbers)
+//            result = +n
+//    }
+
+//    fun sum(vararg numbers : Int){
+//        var result = 0
+//        for(n in numbers)
+//            result = +n
+//        println(result)
+//    }
+//
+    fun sum(x : Int, y : Int): Int{  // (Int, Int) -> Int
+        return x+y
+    }
+
+    fun sum(x: Int, y: Int, z: Int){ // (Int, Int, Int) -> Unit
+        println(x+y+z)
+    }
+
+    fun changeNumbers(koef : Int, vararg numbers: Int){
+        for(number in numbers)
+            println(number*koef)
+    }
+
+    fun square(x: Int): Int = x * x
+
+    fun compareAge(age1: Int, age2: Int){
+        fun ageIsValid(age: Int): Boolean{
+
+            return (age > 0) and (age < 111)
+        }
+        if(!ageIsValid(age1) or !ageIsValid(age2)){
+
+        }
+    }
+
+    // (типы параметров) -> возвращаемый_тип
+
+    fun hello(){  // {} Unit
+        print("Hello Kotlin")
+    }
+
+    fun bye(){  // {} Unit
+        print("Bye bye Kotlin")
+    }
+
+    fun displayMessage(message: () -> Unit): () -> Unit { // high order function
+        message()
+
+        val c = {_:Any, _:Any -> 0}
+        return message
+        }
+    }
+
