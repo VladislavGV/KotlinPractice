@@ -39,11 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         // шаблоны строк
 
-        val firstName : String = "Tom"
-        val secondName : String = "Smith"
-        val wellcome: String = "Hello, $firstName $secondName"
-        println(wellcome)
-//
+//        val firstName : String = "Tom"
+//        val secondName : String = "Smith"
+//        val wellcome: String = "Hello, $firstName $secondName"
+//        println(wellcome)
+////
 //
 //        var wellcomeDublicate = wellcome
 //        var wellcom2 : Any = "String"
@@ -107,43 +107,45 @@ class MainActivity : AppCompatActivity() {
 
 //        for(c in 1..9) println(c)
 //
-        val numbers : Array<Int> = arrayOf(1,2,3,4,5,6)
-        val n = numbers[1]
-        numbers[3] = 7
-        println("numbers[2] = ${numbers[2]}")
+//        val numbers : Array<Int> = arrayOf(1,2,3,4,5,6)
+//        val n = numbers[1]
+//        numbers[3] = 7
+//        println("numbers[2] = ${numbers[2]}")
+//
+//
+//        var i = 2
+//      // val numbers2 = Array(3, {5})  // [5,5,5]
+//
+//       val numbers2 = Array(3, {i++ * 2}) // [2,4,6]
+//
+//        for(number in numbers) print("$number \t")
+//
+//        val people = arrayOf("Tom", "Sam", "Bob")
+//        for(person in people)
+//            print("$person \t")
+//
+//        while (i in people.indices){
+//            print("${people[i]} \t")
+//            i++
+//        }
+//
+//        for (i in people.indices){
+//            print("${people[i]} \t")
+//        }
+//
+//        val integers : IntArray = intArrayOf(1,2,3,4,5,6)
+//        val doubles : DoubleArray = doubleArrayOf(1.3, 1.8, 1.29)
+//
+//        integers = IntArray(3,{5})
+//        doubles = DoubleArray(3, {1.7})
 
 
-        var i = 2
-      // val numbers2 = Array(3, {5})  // [5,5,5]
-
-       val numbers2 = Array(3, {i++ * 2}) // [2,4,6]
-
-        for(number in numbers) print("$number \t")
-
-        val people = arrayOf("Tom", "Sam", "Bob")
-        for(person in people)
-            print("$person \t")
-
-        while (i in people.indices){
-            print("${people[i]} \t")
-            i++
-        }
-
-        for (i in people.indices){
-            print("${people[i]} \t")
-        }
-
-        val integers : IntArray = intArrayOf(1,2,3,4,5,6)
-        val doubles : DoubleArray = doubleArrayOf(1.3, 1.8, 1.29)
-
-        integers = IntArray(3,{5})
-        doubles = DoubleArray(3, {1.7})
-
-
-
-
-
-
+        // Lesson 56
 
     }
+
+    fun displayName(name: String, age: Int){
+        println("Name: $name, Age: $age")
+    }
+
 }
